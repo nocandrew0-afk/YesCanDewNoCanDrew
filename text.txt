@@ -1,0 +1,14 @@
+unzip epistemic_agent_ultimate.zip
+cd epistemic_agent_ultimate
+
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# offline (works immediately)
+python main.py "Is creatine safe?" --place "United States, CA" --date 2025-12-30
+
+# live (turn on providers you have keys for)
+cp .env.example .env
+# fill keys in .env
+python main.py "Your question" --live --place "United States, CA" --date 2025-12-30
