@@ -1,0 +1,18 @@
+def synthesize(scored_claims: list[dict]) -> dict:
+    prompt = f"""
+    Given the scored claims below, produce:
+
+    - Most supported conclusion
+    - Estimated probability (0–1)
+    - Competing hypotheses
+    - Primary uncertainty sources
+    - What new evidence would change the conclusion
+
+    Do NOT persuade. Do NOT narrate.
+    Be clinical.
+
+    Claims:
+    {scored_claims}
+    """
+
+    return call_llm(prompt, json=True)

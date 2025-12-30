@@ -1,0 +1,25 @@
+from typing import Dict
+
+def normalize_question(raw_question: str) -> Dict:
+    """
+    Removes emotionally loaded or leading language.
+    Returns neutral investigatory framing.
+    """
+
+    prompt = f"""
+    Rewrite the following question into a neutral, investigatory form.
+    Remove emotional language, assumptions, or implied conclusions.
+    Preserve intent but not bias.
+
+    Question: {raw_question}
+
+    Return only the rewritten question.
+    """
+
+    # call LLM here
+    neutral_question = call_llm(prompt)
+
+    return {
+        "raw": raw_question,
+        "neutral": neutral_question.strip()
+    }

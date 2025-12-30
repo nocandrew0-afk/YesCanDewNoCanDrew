@@ -1,0 +1,2 @@
+Combined Confidence =
+1 − Π(1 − individual_evidence_scores)

@@ -1,0 +1,12 @@
+def extract_claims(source_text: str) -> list[str]:
+    prompt = f"""
+    Extract discrete factual claims from the text below.
+    Each claim should be testable or verifiable.
+
+    Text:
+    {source_text}
+
+    Return a list of claims.
+    """
+
+    return call_llm(prompt)

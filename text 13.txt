@@ -1,0 +1,22 @@
+def generate_search_plans(neutral_question: str) -> list[str]:
+    """
+    Creates multiple independent research angles.
+    """
+
+    prompt = f"""
+    Given the neutral research question below,
+    generate diverse and opposing search queries.
+
+    Include:
+    - evidence supporting hypotheses
+    - evidence opposing hypotheses
+    - meta-analyses
+    - known biases or controversies
+
+    Question: {neutral_question}
+
+    Return a list of search queries.
+    """
+
+    queries = call_llm(prompt)
+    return queries

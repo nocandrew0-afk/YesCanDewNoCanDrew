@@ -1,0 +1,10 @@
+import asyncio
+
+async def fetch_sources(query: str) -> list[dict]:
+    # placeholder for search API
+    return search_api(query)
+
+async def retrieve_all(queries: list[str]) -> list[dict]:
+    tasks = [fetch_sources(q) for q in queries]
+    results = await asyncio.gather(*tasks)
+    return [item for sublist in results for item in sublist]

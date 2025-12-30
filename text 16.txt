@@ -1,0 +1,17 @@
+Query
+ ↓
+Question Normalizer (remove loaded language)
+ ↓
+Research Planner (multi-angle)
+ ↓
+Parallel Retrieval Engine
+ ↓
+Claim Extraction
+ ↓
+Independent Claim Scoring
+ ↓
+Cross-Validation Matrix
+ ↓
+Probability-Weighted Synthesis
+ ↓
+Uncertainty + Sensitivity Report

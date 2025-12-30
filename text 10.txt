@@ -1,0 +1,17 @@
+def score_claim(claim: str, metadata: dict) -> dict:
+    prompt = f"""
+    Evaluate the following claim based on evidence quality.
+
+    Claim: {claim}
+    Source metadata: {metadata}
+
+    Score from 0 to 1 for:
+    - empirical support
+    - source independence
+    - methodological rigor
+    - replication likelihood
+
+    Return JSON with scores and brief justification.
+    """
+
+    return call_llm(prompt, json=True)

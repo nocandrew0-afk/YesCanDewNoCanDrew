@@ -1,0 +1,5 @@
+Posterior Confidence
+= Prior Confidence
+× Evidence Strength
+× Independence Weight
+× Method Quality

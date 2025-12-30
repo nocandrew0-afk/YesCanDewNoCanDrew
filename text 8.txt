@@ -1,0 +1,24 @@
+import asyncio
+from agent.question import normalize_question
+from agent.planner import generate_search_plans
+from agent.retrieval import retrieve_all
+from agent.claims import extract_claims
+from agent.scoring import score_claim
+from agent.synthesis import synthesize
+
+async def run_agent(question: str):
+    q = normalize_question(question)
+    plans = generate_search_plans(q["neutral"])
+    sources = await retrieve_all(plans)
+
+    claims = []
+    for src in sources:
+        claims.extend(extract_claims(src["text"]))
+
+    scored = [score_claim(c, src["meta"]) for c in claims]
+
+    return synthesize(scored)
+
+if __name__ == "__main__":
+    result = asyncio.run(run_agent("YOUR QUESTION HERE"))
+    print(result)

@@ -1,0 +1,13 @@
+{
+  "claim": "...",
+  "prior": 0.3,
+  "evidence": [
+    {
+      "strength": 0.85,
+      "method_quality": 0.9,
+      "independence": 1.0,
+      "bias_penalty": 0.9
+    }
+  ],
+  "posterior": 0.68
+}

@@ -1,0 +1,16 @@
+epistemic_agent/
+│
+├── main.py
+├── agent/
+│   ├── question.py        # normalization
+│   ├── planner.py         # search strategy
+│   ├── retrieval.py       # parallel search
+│   ├── claims.py          # claim extraction
+│   ├── scoring.py         # evidence scoring
+│   ├── synthesis.py       # final answer
+│
+├── storage/
+│   ├── memory.py
+│
+├── config.py
+└── requirements.txt

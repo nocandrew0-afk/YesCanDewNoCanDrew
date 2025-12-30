@@ -1,0 +1,15 @@
+You
+ ↓
+Question Interpreter
+ ↓
+Research Planner
+ ↓
+Parallel Search & Retrieval
+ ↓
+Source Scoring & Filtering
+ ↓
+Cross-Verification Engine
+ ↓
+Synthesis & Answer Generator
+ ↓
+Confidence / Uncertainty Report
