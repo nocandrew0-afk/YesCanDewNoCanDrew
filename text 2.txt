@@ -1,0 +1,39 @@
+# Epistemic Agent (Answer-Always, Contextual Risk)
+
+A minimal, runnable Python skeleton for a research agent that:
+- Normalizes questions to reduce bias
+- Plans multi-angle research queries
+- Retrieves sources (pluggable providers)
+- Extracts claims
+- Scores evidence (transparent factors)
+- Synthesizes an estimate
+- Reconstructs *present* context (time/place/etc.)
+- Produces a *situational* risk analysis (causal, non-templated)
+
+## Quick start
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run with mock providers (no network)
+python main.py "Is creatine safe?" --date 2025-12-30 --place "United States, CA"
+```
+
+## Plugging in real providers
+- Implement `LLMClient` in `agent/llm.py` (OpenAI/Anthropic/local model)
+- Implement `SearchProvider` in `agent/retrieval.py` (Bing/Brave/SerpAPI/etc.)
+- Optionally implement `Fetcher` to download full pages (not required for demo)
+
+This repo ships with:
+- `MockLLMClient` that behaves deterministically for smoke tests
+- `MockSearchProvider` that returns small canned sources
+
+
+## Noise-control armor
+This version includes:
+- Dedupe (URL + text fingerprint)
+- Provider/domain quotas (prevents one channel dominating)
+- Second-pass adversarial verification retrieval
+- Confidence governor (caps overconfidence when evidence is thin/correlated)
